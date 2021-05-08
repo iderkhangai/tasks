@@ -1,0 +1,6 @@
+NAME_OF_POD     MAX_CPU  MAX_MEM  
+kubectl-pod-1   39       11       
+kubectl-pod-2   68       66       
+kubectl-pod-3   42       11       
+kubectl-pod-4   71       15       
+kubectl-pod-5   29       73       

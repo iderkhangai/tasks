@@ -1,0 +1,5 @@
+kubectl-pod-1  50     11
+kubectl-pod-2  67     66
+kubectl-pod-3  10     10
+kubectl-pod-4  70     14
+kubectl-pod-5  28     1 

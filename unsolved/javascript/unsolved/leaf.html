@@ -1,0 +1,90 @@
+<html>
+
+  <head>
+    <title>Tree</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <style>
+      .container {
+        display: flex;
+        border-left: 2px solid black;
+      }
+
+      .meme-box {
+        width: 300px;
+        max-width: 300px;
+        height: 400px;
+        flex: auto;
+        line-height: 400px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        border-right: 2px solid black;
+        border-top: 2px solid black;
+      }
+
+      .container:last-of-type .meme-box {
+        border-bottom: 2px solid black;
+      }
+
+      .meme-box.right {
+        width: 540px;
+        max-width: 540px;
+      }
+
+      .meme-box.imgur-wrapper {
+        overflow: hidden;
+      }
+
+      .meme-box.imgur-wrapper .iframe-wrapper img{
+        width: 540px;
+        max-width: 540px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div class="container">
+        <div class="meme-box">expectation...</div>
+        <div class="meme-box right imgur-wrapper">
+          <div class="iframe-wrapper">
+            <img src="https://i.imgur.com/k1a6oWp.gif">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="meme-box">reality...</div>
+        <div class="meme-box right">
+          <div id="sketch-div"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <code>
+        Main task:
+        Create an animation from scratch.
+        Something similar what you can see in the `expectation` segment of this page.
+        You can use p5.js https://p5js.org/.
+        If the `expectation` gif not visible you just skip this exercise.
+      </code>
+    </div>
+
+    <script>
+      function setup() {
+        const canvas = createCanvas(540, 400);
+        canvas.parent('sketch-div');
+        frameRate(8);
+      }
+
+      function draw() {
+        background(220);
+
+        strokeWeight(2);
+        line(240, 400, 270, 300);
+        line(270, 300, 200, 230);
+        line(270, 300, 340, 290);
+      }
+    </script>
+  </body>
+
+</html>

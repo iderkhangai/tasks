@@ -1,0 +1,58 @@
+Here you can find some simple tasks, not necessarily in order of complexity! Solve as many of them as you can!
+If possible, Tasks 1-3 should be solved in Python, but if you are not familiar with Python, other languages are also acceptable.
+For Task 4 you should make a Shell script.
+You should be able to solve at least one of Tasks 1-3.
+
+
+Task 1:
+Write a script that reads the input1 file given in this folder and searches for maximum values.
+The input1 file contains a simplified output of a "kubectl top" command 6 times.
+This represents the CPU and Memory usage of pods in a kubernetes cluster architecture measured over 6 seconds.
+
+After the header, each row in the input1 file will contain the following:
+ - Name of the pod
+ - CPU usage value
+ - Memory usage value
+
+Search for the biggest CPU and Memory value for each of the pods, and print them to a file named result1.
+Your result1 file should contain this header and your solution for the maximum values below that:
+"NAME_OF_POD    MAX_CPU    MAX_MEM"
+
+
+Task 2:
+Read the input2 file, which contains the acceptable boundary values for the pods.
+In your second script, compare your maximum values from the result1 file to the values from the input2 file.
+Your result2 file should contain four lists.
+Two list of pods that performed below their boundaries in terms of CPU and Memory.
+And another two list of pods that went beyond their acceptable limits in terms of CPU and Memory.
+Pretty formatting of lists worth extra points! :)
+
+
+Task 3:
+Your third script should visualize the values for the pods from the input1 file.
+The script should wait the names of the pods as parameters. Any number of pod names should be handled by the script.
+Your script should read from input1 file, and make as many output images as the given number of pods.
+Each image should have two graphs with X and Y axis, for CPU and Memory usage for the given pod.
+Axis X should be just an iterator 1, 2, 3...
+Axis Y should contain the corresponding CPU or Memory value for the given pod.
+A possible way of solving this task is using Python and matplotlib, but other solutions are acceptable also.
+
+Script should be called like this:   script3.py kubectl-pod-1 kubectl-pod-2 kubectl-pod-4
+
+
+Task 4:
+Make at least one of these 3 scripts runnable on a remote machine.
+Your fourth script should use SSH to (copy and) execute one of these 3 scripts on a remote machine.
+If possible, you should use key-based authentication for SSH. The script should wait the remote machine IP and the name of the key (or password) as parameters.
+If you are not able to use key-based authentication, password based authentication is also acceptable.
+
+Script should be called like this (use remote IP instead of local one):
+script4.sh 192.168.0.1 key.pem
+OR
+script4.sh 192.168.0.1 password
+
+
+Please NOTE:
+Our team is waiting for candidates who are willing to solve at least one of these tasks.
+It is not a problem if you cannot fully solve a problem, partial solution also counts!
+Your solutions shall be discussed during the interview session, so please be prepared for that!

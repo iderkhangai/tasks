@@ -1,0 +1,34 @@
+NokiaClientTask
+
+Write a Java program that meets the following requirements:
+
+- Expects at most two parameters as command line arguments
+	- First parameter is an IPv4 address given in the classic form or a "localhost" string
+	- Second parameter is a 16-bit port number
+	- If the first parameter is not given, the server host is going to be "localhost"
+	- If the second parameter is not given, the port is going to be 1234
+	- It is possible that the port is given, but the server address is not
+	- It is possible that neither of that two is given
+	- If both of that parameters are provided, they provided in this order: 1. address, 2. port number
+	- If we are unable to parse the arguments, or in case the arguments count is not that we expected, return error code 1
+
+- Try to connect to the given server through the given port with a Socket
+	- If it is not succeed for even the second try, return error code 2
+	- If it is succeed, inform the user about the following possibilities
+		
+		- If user enters the "exit" or "e" string, the client will send the "exit" message to the server and then closes the connection with the server
+		
+		- If user enters the "add" or "a" string, they will have the possibility to give an email address and some numbers separated by spaces. All of the numbers should be between 1 and 100. For incorrect input (malformed or nonexistent email, bad count of numbers, no numbers, bad interval of numbers...) we should warn the user about that, and we should give the user a chance to enter the input again. When finally the input is correct, we just send the whole input (example: "add a@a.hu 1 2 3") to the server and print the response from the server. We expect the response to be "OK". Even if user entered "a", the request sent to the server still starts with "add"
+
+		- If user enters the "remove" or "r" string, we accept further user input as an email address or a natural number. Check the user's input. For correct input, send the whole input to the server (examples: "remove a@a.hu", "remove 1") and print the server's response. We expect a natural number as a server response
+		
+		- If user enters "info" or "i", then we expect another input from the user: one or more email addresses separated by spaces or the "all" string. Check the user's input. In case of bad input, ask the user to provide input again. Send the "info all" or something like "info a@a.hu b@b.hu" to the server and print its response. Response should be one or more natural numbers separated by spaces
+	
+	- User can call these possibilities again and again until they chooses the "exit"
+	- If the server's answer does not match with the expected format, stop the program and return error code 3
+- For successful termination, return code 0; for other faulty exit, return error code 4 to the OS
+- Log everything important to the default console. Errors should be logged to the default error console
+- Try to create clean, self-documenting code. Organize code to units (classes) if it necessary
+- Test your code with automatic unit tests or just attach relevant test inputs
+- Communication with the server should not be covered by the tests, only test the input format checks
+- Server program is not subject of this task
